@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElderEase | AI Healthcare System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<nav>
+    <h2>ElderEase</h2>
+    <div class="nav-status">
+        <span class="dot"></span> System Active
+    </div>
+</nav>
+
+<header>
+    <h1>AI-Powered Elderly Healthcare Dashboard</h1>
+    <p>Real-Time Monitoring • Predictive Analytics • Emergency Response</p>
+</header>
+
+<section class="dashboard">
+
+    <div class="card">
+        <h3>❤️ Heart Rate</h3>
+        <p id="heartRate">-- bpm</p>
+    </div>
+
+    <div class="card">
+        <h3>🩺 Blood Pressure</h3>
+        <p id="bp">-- / --</p>
+    </div>
+
+    <div class="card">
+        <h3>🌡 Temperature</h3>
+        <p id="temp">-- °C</p>
+    </div>
+
+    <div class="card">
+        <h3>🚨 Fall Status</h3>
+        <p id="fallStatus">Normal</p>
+    </div>
+
+</section>
+
+<section class="chart-section">
+    <canvas id="vitalsChart"></canvas>
+</section>
+
+<section class="sos-section">
+    <button onclick="triggerSOS()" class="sos-btn">EMERGENCY SOS</button>
+</section>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        🚨 Caregiver Notified Successfully!
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<footer>
+    Manipal University Jaipur<br>
+    Department of Computer Science & Engineering • 2026
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
